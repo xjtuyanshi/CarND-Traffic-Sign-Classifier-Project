@@ -71,10 +71,10 @@ Below are the random images after preprocessing:
 * original:
 
 ![alt text][image4]
+
 * Augmented:
 ![alt text][image5]
-The difference between the original data set and the augmented data set is the following 
-* zoomed,sheared,rotatated,shifted..
+* The difference between the original data set and the augmented data set is the the augmented images are zoomed,sheared,rotatated,shifted..
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
