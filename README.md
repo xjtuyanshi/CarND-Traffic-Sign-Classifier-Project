@@ -55,17 +55,17 @@ signs data set:
 
 Here is an exploratory visualization of the training data set. The first chart randomly picked one of 43 classes images with each class's number of pictures and pecentage % of total number of pictures.
 ![alt text][image1]
-The bar chart showing how the trainning data is unbalanced. Some of them have way many more images than others. This could potentially impact the model accuray.
+The bar chart showing how the training data is unbalanced. Some of them have way many more images than others. This could potentially impact the model accuray.
 ![alt text][image2]
 
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
-#### Preprocessing
-* Grayscale: gray scles could help the image normalization easiler.I converted the color space to YUV space and only pick the Y channel after refering LeCun's paper.
-* Contrst Adjust:` cv2.equalizeHist` to imporve the contract of images
+#### Preprocess
+* Grayscale: gray scles could help the image normalization easier.I converted the color space to YUV space and only pick the Y channel after refering LeCun's paper.
+* Contrst Adjust:` cv2.equalizeHist` to improve the contract of images
 * Normalization: applied zero-mean normalization method as it provides way much better results than Udacity's suggested simple normalization method.
-Below are the random images after preprocessing:
+Below are the random images after preprocessed:
 ![alt text][image3]
 * Data Augmentation:To add more data to the the data set, I used Keras' `ImageDataGenerator` because we would like to make sure the rotation and zoom in/out should not impact the results.Here is an example of an original image and an augmented image:
 * original:
@@ -76,7 +76,7 @@ Below are the random images after preprocessing:
 
 ![alt text][image5]
 
-* The difference between the original data set and the augmented data set is the the augmented images are zoomed,sheared,rotatated,shifted..
+* The difference between the original data set and the augmented data set is the the augmented images are zoomed,sheared,rotated,shifted..
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
@@ -101,7 +101,7 @@ My final model consisted of the following layers:
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used my ‘Powerful" Nvida GTX 1060 with following parameters:
+To train the model, I used my ‘Powerful" Nvidia GTX 1060 with following parameters:
 * Optimizer: Adam Optimizer
 * Learning rate: 0.001
 * Epoch: 64
@@ -119,7 +119,7 @@ My final model results were:
 * test set accuracy of 0.970
 
 If an iterative approach was chosen:
-I basiclly just modified leNet structure and just tested different padding size and I found 5X5 is good size to use. Then I referenced some other existing models and articles, I noticed I could add dropout to prevent overfitting. However, initially, the results are still not that good(~85% test accuracy).I noticed I could change the data preprocessing method to improve the accuracy. After using new normalization method, the test accuray rate significantly improved to 94%. However, when I tested it with some real world images, it only has ~20 % accuracy rate, then later I decided to add the data augmentation to improve the robustness of the model. Fortunately, the model test accuracy rate improved to 97% and real world accuracy rate imporved to 50%. A big jump!
+I basically just modified leNet structure and just tested different padding size and I found 5X5 is good size to use. Then I referenced some other existing models and articles, I noticed I could add dropout to prevent overfitting. However, initially, the results are still not that good(~85% test accuracy).I noticed I could change the data preprocessing method to improve the accuracy. After using new normalization method, the test accuray rate significantly improved to 94%. However, when I tested it with some real world images, it only has ~20 % accuracy rate, then later I decided to add the data augmentation to improve the robustness of the model. Fortunately, the model test accuracy rate improved to 97% and real world accuracy rate imporved to 50%. A big jump!
 If a well known architecture was chosen:
  
 
@@ -158,10 +158,10 @@ For the second image, it doesn't provide the correct results. The 3rd result is 
 For the thrid image, it doesn't provide the correct results at all . None of top5 results matches the actual result.
 ![alt text][image10]
 
-For the forth image, it doesn't provide the correct results at all . The 3rd result is the correct one.actual result. The differnce between the five probs are not large.Feels like the model is hesitating when make the decision.
+For the forth image, it doesn't provide the correct results at all . The 3rd result is the correct one.actual result. The difference between the five probs are not large.Feels like the model is hesitating when make the decision.
 ![alt text][image11]
 
-For the fifth image, it doesn't provide the correct results  . The 4th result is the correct one.actual one but with nerarly 0 probs.
+For the fifth image, it doesn't provide the correct results  . The 4th result is the correct one.actual one but with nearly 0 probs.
 ![alt text][image12]
 
-All other images' top 5 prbs can be found in the folder ./test_images/
+All other images' top 5 probs can be found in the folder ./test_images/
