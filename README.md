@@ -68,8 +68,10 @@ The bar chart showing how the trainning data is unbalanced. Some of them have wa
 Below are the random images after preprocessing:
 ![alt text][image3]
 * Data Augmentation:To add more data to the the data set, I used Keras' `ImageDataGenerator` because we would like to make sure the rotation and zoom in/out should not impact the results.Here is an example of an original image and an augmented image:
+* original:
 
 ![alt text][image4]
+* Augmented:
 ![alt text][image5]
 The difference between the original data set and the augmented data set is the following 
 * zoomed,sheared,rotatated,shifted..
