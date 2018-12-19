@@ -73,7 +73,9 @@ Below are the random images after preprocessing:
 ![alt text][image4]
 
 * Augmented:
+
 ![alt text][image5]
+
 * The difference between the original data set and the augmented data set is the the augmented images are zoomed,sheared,rotatated,shifted..
 
 
